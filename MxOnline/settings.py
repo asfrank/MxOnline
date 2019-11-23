@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'apps.courses.apps.CoursesConfig',
     'apps.operations.apps.OperationsConfig',
     'apps.users.apps.UsersConfig',
-    'apps.organizations.apps.OrganizationsConfig'
+    'apps.organizations.apps.OrganizationsConfig',
+    'crispy_forms',
+    'xadmin.apps.XAdminConfig',
+    'DjangoUeditor'
 ]
 
 MIDDLEWARE = [

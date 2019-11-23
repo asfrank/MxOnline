@@ -1,0 +1,23 @@
+1. 下载xadmin源码
+2. 在settings的INSTALLED_APPS中添加
+    crispy_forms 和 xadmin
+3. 安装xadmin的依赖包
+4. 通过migrate生成xadmin需要的表
+
+1.找到当前虚拟环境下的site-packages包目录, 以虚拟环境为pyenv安装为例
+
+    cd ~/.pyenv/versions/虚拟环境名/lib/python3.6/site-packages
+
+2.从GitHub下载最新支持python3的DjangoUeditor3
+
+    git clone https://github.com/twz915/DjangoUeditor3.git
+
+3.安装DjangoUeditor3
+
+    cd DjangoUeditor3
+
+    python setup.py install
+
+    cp - r DjangoUeditor  ../    拷贝其中的 DjangoUeditor 到site-packages包目录下
+
+4. settings.py的installed_apps中添加DjangoUeditor

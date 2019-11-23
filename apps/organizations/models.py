@@ -3,12 +3,15 @@ from django.db import models
 from apps.users.models import BaseModel
 
 class City(BaseModel):
-    name = models.CharField(max_length=20, verbose_name='城市')
+    name = models.CharField(max_length=20, verbose_name='城市名')
     desc = models.CharField(max_length=200, verbose_name='描述')
 
     class Meta:
         verbose_name = '城市'
         verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
 
 class CourseOrg(BaseModel):
     name = models.CharField(max_length=50, verbose_name='机构名称')
@@ -28,6 +31,9 @@ class CourseOrg(BaseModel):
         verbose_name = '课程机构'
         verbose_name_plural = verbose_name
 
+    def __str__(self):
+        return self.name
+
 class Teacher(BaseModel):
     org = models.ForeignKey(CourseOrg, on_delete=models.CASCADE, verbose_name='所属机构')
     name = models.CharField(verbose_name='教师名', max_length=50)
@@ -43,3 +49,6 @@ class Teacher(BaseModel):
     class Meta:
         verbose_name = '教师'
         verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
