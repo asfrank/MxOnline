@@ -35,11 +35,11 @@ class LoginView(View):
         #     return render(request, 'login.html', {'msg', '请输入密码'})
 
         #用于通过用户名密码查询用户是否存在
-        user = authenticate(username=user_name, password=password)
-        if user is not None:
-            login(request, user)
-            return HttpResponseRedirect(reverse('index'))
-        else:
-            return render(request, 'login.html', {'msg': '用户名或密码错误'})
+        # user = authenticate(username=user_name, password=password)
+        # if user is not None:
+        #     login(request, user)
+        #     return HttpResponseRedirect(reverse('index'))
+        # else:
+        #     return render(request, 'login.html', {'msg': '用户名或密码错误'})
 
 
