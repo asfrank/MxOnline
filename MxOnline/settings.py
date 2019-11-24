@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'apps.organizations.apps.OrganizationsConfig',
     'crispy_forms',
     'xadmin.apps.XAdminConfig',
-    'DjangoUeditor'
+    'DjangoUeditor',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+#云片网相关设置
+yp_apikey = ""
+
+#redis相关配置
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
