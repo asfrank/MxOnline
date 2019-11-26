@@ -22,6 +22,7 @@ from django.views.decorators.csrf import csrf_exempt
 import xadmin
 
 from apps.users.views import LoginView, LogoutView, SendSmsView, DynamicLoginView, RegisterView
+from apps.organizations.views import OrgView
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -32,5 +33,7 @@ urlpatterns = [
     path('d_login/', DynamicLoginView.as_view(), name='d_login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     url(r'^captcha/', include('captcha.urls')),
-    path('send_sms/', csrf_exempt(SendSmsView.as_view()), name='send_sms')
+    path('send_sms/', csrf_exempt(SendSmsView.as_view()), name='send_sms'),
+    #机构相关页面
+    url(r'^org_list/', OrgView.as_view(), name='org_list')
 ]
